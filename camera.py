@@ -4,7 +4,7 @@ import json
 
 WIDTH = 320
 HEIGHT = 240
-IP = '192.168.0.xxx'
+IP = '192.168.0.83'
 PORT_POSE = 22223
 PORT_READ = 22225
 
@@ -103,11 +103,12 @@ elems = [
     'rtpjpegdepay',
     'jpegdec',
     'videoconvert',
-    'appsink udpsrc port=5001 caps = "application/x-rtp,clock-rate=44100,channels=1,payload=96"',
-    'queue',
-    'rtpL16depay',
-    'audioconvert',
-    'directsoundsink'
+    'appsink'
+    # 'appsink udpsrc port=5001 caps = "application/x-rtp,clock-rate=44100,channels=1,payload=96"',
+    # 'queue',
+    # 'rtpL16depay',
+    # 'audioconvert',
+    # 'directsoundsink'
 ]
 
 src = ' ! '.join(elems)
